@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <title>Homepage | DEVOUR WIKI</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+        body{
+            background-color: black;
+            background-repeat: no-repeat;
+            background-position: 0% 0%;
+            background-size: cover;
+        }
+        .banner{
+            background-image: url("img/bg.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .head{
+            margin-left:15%;
+        }
+        button{
+            background-color: transparent;
+            border: none;
+            font-family: Special Elite;
+            font-size: 75px;
+            color: white;
+            transition:  0.6s ease;
+        }
+        button:hover{
+            color:maroon;
+        }
+        small{
+            font-size: 25px;
+        }
+        .container{
+            margin-top: -1%;
+            margin-left: 15%;
+            width: 70%;
+            height: 100%;
+            background-color: black;
+        }
+        .blank{
+            padding: 35%;
+        }
+        .slider{
+            padding-top: 0%;
+        }
+        .mySlides {display: none;}
+        .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 47.5%;
+        width: auto;
+        margin-top: auto;
+        padding: 16px;
+        background-color: maroon;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        }
+        .next {
+        right: 15%;
+        border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+        background-color: black;
+        }
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+        center{
+        font-family: Arial;
+        font-size: 20px;
+        color: white;
+        }
+        h1{
+        font-family: Special Elite;
+        color: white;
+        }
+        p{
+        font-family: Arial;
+        font-size: 20px;
+        color: white;
+        }
+        ul {
+        list-style-type: square;
+        }
+        li{
+        font-family: Arial;
+        font-size: 20px;
+        color: white;
+        }
+        .nav{
+        margin-bottom: 2%;
+        background-color: rgba(128, 0, 0, 0.6);
+        color: white;
+        word-spacing: 10px;
+        }
+        a{
+        text-decoration: none;
+        }
+        </style>
+
+    </head>
+    <body>
+    <div class="banner">
+        <div class="head">
+            <form><button type="submit" formaction="index.html" style="margin-top: 5%;"> DEVOUR<small>WIKI</small></button></form>
+        </div>
+    </div>
+    <div class="nav">
+        <center><a href="characters.html">CHARACTERS</a> | <a href="items.html">ITEMS</a> | <a href="locations.html">LOCATIONS</a> | <a href="perks.html">PERKS</a> | <a href="sacrificial.html">SACRIFICIAL</a></center>
+    </div>
+    <div class="container">
+        <div class="slider">
+            <div class="w3-content w3-section" style="max-width:75%;">
+                <a href="index.html"><img class="mySlides w3-animate-right" src="img/logo.png" style="width:100%"></a>
+                <a href="characters.html"><img class="mySlides w3-animate-right" src="img/characters.png" style="width:100%"></a>
+                <a href="items.html"><img class="mySlides w3-animate-right" src="img/items.png" style="width:100%"></a>
+                <a href="locations.html"><img class="mySlides w3-animate-right" src="img/locations.png" style="width:100%"></a>
+                <a href="perks.html"><img class="mySlides w3-animate-right" src="img/perks.png" style="width:100%"></a>
+                <a href="sacrificial.html"><img class="mySlides w3-animate-right" src="img/sacrificial.png" style="width:100%"></a>
+            </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+            <br>
+            <script>
+                var slideIndex = 1;
+                var timer = null;
+                showSlides(slideIndex);
+
+                function plusSlides(n) {
+                clearTimeout(timer);
+                showSlides(slideIndex += n);
+                }
+
+                function currentSlide(n) {
+                clearTimeout(timer);
+                showSlides(slideIndex = n);
+                }
+
+                function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n==undefined){n = ++slideIndex}
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+                timer = setTimeout(showSlides, 3000);
+                }
+            </script>
+        </div>
+        <center>Published on <b>January 28, 2021</b></center>
+        <h1>What is <b>DEVOUR</b>?</h1>
+        <p>
+            DEVOUR is a co-op horror survival game for 1-4 players. Stop possessed cultists before they drag you to hell. Run. Scream. Hide. Just don't get caught. This game was released and published by Straight Back Games.
+        <p>
+            Work alone or as a team to banish Azazel and his minions. Collect items to complete the rituals to finally banish Azazel. Use Ritual Tokens to unlock Perks, Collect the Robes and enjoy the scares!
+        </p>
+        TITE<br><br>
+        <h1>DO YOU GOT NERVES OF STEEL?</h1>
+        <ul>
+        <li>1-4 player online co-op</li>
+        <p>Take control of up to 4 cult members in this unique online co-op experience where you must work together to stop possessed cultists dead set on taking you to hell with them.</p>
+        <li>Single player mode</li>
+        <p>For hardcore players only. In this mode, you'll be doing all the screaming yourself.</p>
+        <li>Challenging gameplay</li>
+        <p>No two DEVOUR playthroughs are ever the same. To stop the evil, you'll need a focused team and perfect execution, with a single session lasting up to an hour.</p>
+        </ul>
+        <br>
+        <h1> SYSTEM REQUIREMENTS </h1>
+        <p>MINIMUM:</p>
+        <ul>
+            <li>Requires a 64-bit processor and operating system</li>
+            <li>OS: Windows 10 - 64 bit</li>
+            <li>Processor: Intel i5 or new-gen i3 / AMD equivalent</li>
+            <li>Memory: 8 GB RAM</li>
+            <li>Graphics: NVIDIA GTX 970 / AMD Radeon R9 290</li>
+            <li>DirectX: Version 11</li>
+            <li>Storage: 5 GB available space</li>
+        </ul>
+        <p>RECOMMENDED:</p>
+        <ul>
+            <li>Requires a 64-bit processor and operating system</li>
+            <li>OS: Windows 10 - 64 bit</li>
+            <li>Processor: Intel i7 or AMD equivalent (AMD FX 9500+ Series)</li>
+            <li>Memory: 16 GB RAM</li>
+            <li>Graphics: NVIDIA GTX 970 / AMD Radeon R9 290 or greater</li>
+        </ul>
+    </div>
+    <div class="blank">
+        <h1>&nbsp;</h1>
+    </div>
+    </body>
+</html>
